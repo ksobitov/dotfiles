@@ -1,0 +1,18 @@
+# Don't Randomly Turn off
+xset s off &
+xset -dpms &
+xset s noblank &
+
+# Speedy keys
+xset r rate 210 30 &
+
+# XDG Paths
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+
+# Hide mouse when typing
+xbanish &
+
+# zsh config dir
+# export ZDOTDIR=$HOME/.config/zsh

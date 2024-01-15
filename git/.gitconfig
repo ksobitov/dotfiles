@@ -1,0 +1,7 @@
+[user]
+	email = komiljon.sobitov.uzb@gmail.com
+	name = Komiljon Sobitov
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
