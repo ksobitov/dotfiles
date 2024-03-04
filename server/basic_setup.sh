@@ -41,7 +41,7 @@ echo -e "\n${LIGHT_MAGENTA}Please enter the following user details.${NC} ${COMPU
 read -p "$(echo -e ${LIGHT_YELLOW}Enter username:${NC}) " username
 read -p "$(echo -e ${LIGHT_YELLOW}Enter shell \(e.g., /bin/bash\):${NC}) " shell
 read -p "$(echo -e ${LIGHT_YELLOW}Enter groups \(comma-separated, no spaces\):${NC}) " groups
-read -s -p "${LIGHT_YELLOW}Enter password:${NC} " password
+read -s -p "$(echo -e ${LIGHT_YELLOW}Enter password \:${NC}) " password
 echo
 
 # Inform the user about manual upgrade
