@@ -42,6 +42,12 @@ This script automates the setup of a Kubernetes cluster on Ubuntu. It's designed
     Follow any on-screen instructions. The script will output a `kubeadm join` command for joining nodes to your cluster.
 
 ## Post-Setup
+Before initializing your Kubernetes cluster
+
+```bash
+sudo kubeadm config images pull
+```
+
 Initializing your Kubernetes cluster
 
 ```bash
