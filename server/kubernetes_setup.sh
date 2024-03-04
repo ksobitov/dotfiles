@@ -42,7 +42,7 @@ function remove_conflicting_packages {
     echo "All clear! No troublemakers found."
 }
 
-function setup_docker_and_containerd {
+function setup_docker {
     echo "Setting up Docker and containerd... because even containers need a cozy home. 🏡"
     sudo apt-get update
     sudo apt-get install -y ca-certificates curl gnupg2 software-properties-common apt-transport-https
@@ -55,11 +55,15 @@ function setup_docker_and_containerd {
     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     sudo apt-get update
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+    echo "Docker is now snugly set up in their new home. 🏠✨"
+}
+
+function setup_containerd {
     containerd config default | sudo tee /etc/containerd/config.toml >/dev/null
     sudo sed -i 's/SystemdCgroup = false/SystemdCgroup = true/g' /etc/containerd/config.toml
     sudo systemctl restart containerd
     sudo systemctl enable containerd
-    echo "Docker and containerd are now snugly set up in their new home. 🏠✨"
+    echo "containerd are now snugly set up in their new home. 🏠✨"
 }
 
 function install_kubernetes_components {
@@ -79,7 +83,8 @@ disable_swap
 load_kernel_modules
 set_sysctl_params
 remove_conflicting_packages
-setup_docker_and_containerd
+setup_docker
+setup_containerd
 install_kubernetes_components
 
 echo "Congratulations! 🎊 Your Kubernetes cluster is ready to conquer the digital world. What will you deploy first? 🚀🌌"
