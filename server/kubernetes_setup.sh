@@ -59,6 +59,23 @@ function setup_docker {
     sudo apt-get update
 
     sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+
+    sudo mkdir -p /etc/docker
+    cat <<EOF | sudo tee /etc/docker/daemon.json
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2"
+}
+EOF
+
+    sudo systemctl enable docker
+    sudo systemctl daemon-reload
+    sudo systemctl restart docker
+    
     echo "Docker is now snugly set up in their new home. 🏠✨"
 }
 
