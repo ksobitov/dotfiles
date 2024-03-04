@@ -19,6 +19,36 @@ This script automates the setup of a Kubernetes cluster on Ubuntu. It's designed
 
 ## Usage
 
+### Create user and upgrade system
+1. Download the Script
+    Use `curl` to download the script directly into your environment:
+
+   ```bash
+   bash <(curl -s https://raw.githubusercontent.com/ksobitov/dotfiles/main/server/basic_setup.sh)
+   ```
+
+   After this command update and upgrade system
+   
+   ```bash
+   apt update && apt upgrade -y
+   ```
+   
+    After this reboot your system
+   ```bash
+   init 6
+   ```
+
+   Next: Connect your server via **ssh** and change user
+   
+   ```bash
+   ssh root@<YOUR_IP_ADDRESS>
+
+   su -l <USERNAME>
+   ```
+
+   After this you can install Kubernetes
+
+### Install Kubernetes
 1. **Download the Script**
 
     Use `curl` to download the script directly into your environment:
