@@ -83,4 +83,3 @@ setup_docker_and_containerd
 install_kubernetes_components
 
 echo "Congratulations! 🎊 Your Kubernetes cluster is ready to conquer the digital world. What will you deploy first? 🚀🌌"
-
