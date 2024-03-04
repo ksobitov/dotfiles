@@ -24,19 +24,19 @@ This script automates the setup of a Kubernetes cluster on Ubuntu. It's designed
     Use `curl` to download the script directly into your environment:
 
     ```bash
-    curl -O https://example.com/setup_kubernetes.sh
+    curl -O https://raw.githubusercontent.com/ksobitov/dotfiles/main/server/k8s.sh
     ```
 
 2. **Make the Script Executable**
 
     ```bash
-    chmod +x setup_kubernetes.sh
+    chmod +x k8s.sh
     ```
 
 3. **Run the Script as Root**
 
     ```bash
-    sudo ./setup_kubernetes.sh
+    sudo ./k8s.sh
     ```
 
     Follow any on-screen instructions. The script will output a `kubeadm join` command for joining nodes to your cluster.
