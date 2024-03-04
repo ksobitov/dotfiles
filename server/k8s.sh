@@ -1,14 +1,5 @@
 #!/bin/bash
 
-function check_root {
-    if [ "$(id -u)" != "0" ]; then
-        echo "This script must be run as root. Please elevate your powers with sudo! 🚀" 1>&2
-        exit 1
-    else
-        echo "Congratulations! You're running as root. Let's get this party started! 🎉"
-    fi
-}
-
 function update_and_upgrade {
     echo "Updating and upgrading your packages. This might take a bit, so why not grab a coffee? ☕"
     sudo apt update -y
@@ -83,7 +74,6 @@ function install_kubernetes_components {
 }
 
 # Let's call all the functions in order
-check_root
 update_and_upgrade
 disable_swap
 load_kernel_modules
