@@ -1,0 +1,11 @@
+[Unit]
+Description=Start xbanish and set xset r rate
+After=graphical-session.target
+
+[Service]
+ExecStartPre=/usr/bin/xset r rate 210 30
+ExecStart=/usr/bin/xbanish
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

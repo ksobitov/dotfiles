@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Duplicate the current tmux pane in a new vertical split,
+# keeping the same working directory.
+
+current_dir=$(tmux display-message -p '#{pane_current_path}')
+tmux split-window -v -c "$current_dir"
